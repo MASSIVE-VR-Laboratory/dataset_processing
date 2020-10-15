@@ -166,7 +166,7 @@ class TXT2JSON:
         random.shuffle(image_filelist)
         ratio = int(len(image_filelist) * self.train_ratio)
         train_list = image_filelist[:ratio]
-        test_list = image_filelist[:ratio]
+        test_list = image_filelist[ratio:]
 
         train_json_str = self.convert_txt2coco(train_list)
         _write_json_file(train_json_str, "instances_train2020.json")
